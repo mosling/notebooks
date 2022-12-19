@@ -22,13 +22,9 @@ additional_name = {
 
 def get_country_code(country_name):
     return_code = None
+    
     for code,name in COUNTRIES.items():
         if name == country_name:
-            return_code = code
-            break
+            return code
     
-    if not return_code:
-        return_code = additional_name[country_name] if country_name in additional_name else None
-        
-    return return_code
-
+    return additional_name[country_name] if country_name in additional_name else None
